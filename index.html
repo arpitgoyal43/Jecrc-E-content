@@ -20,7 +20,6 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 
-
 </style>
 
 </head>
@@ -44,7 +43,13 @@
                     <li><a href="#faculty-sec">FACULTY</a></li>
                      <li><a href="#course-sec">COURSES</a></li>
                      <li><a href="#contact-sec">CONTACT</a></li>
+                     <li>   <form class="form-inline my-2 my-lg-0" method="get" action="http://www.google.com/search" >
+                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                       </form>
+                     </li>
                 </ul>
+
             </div>
 
         </div>
@@ -115,7 +120,7 @@
 
 
        <div class="w3-container">
-         <center><h2>Notice Board</h2></center>
+         <center><h2 style="color: white; background-color: #D50000;">Notice Board</h2></center>
          <HR>
        </div>
 
@@ -477,7 +482,7 @@ PG
      <!-- CONTACT SECTION END-->
 
     <div id="footer">
-          &copy 2017-18 jecrcecontent.netlify.com | All Rights Reserved
+          &copy 2017-18 Jecrc E-Content | All Rights Reserved
     </div>
      <!-- FOOTER SECTION END-->
 
@@ -497,21 +502,23 @@ PG
 </body>
 
 <script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
 
-var myIndex = 0;
-carousel();
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
 
-function carousel() {
+  function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";
     }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 9000);
-    }
+    x[slideIndex-1].style.display = "block";
+  }
 
 </script>
 
